@@ -662,23 +662,32 @@
 					<p>Get in touch with us</p>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-9 col-xs-12 forma">
+				<!-- <div class="col-md-9 col-xs-12 forma">
 					<form action="mailto:someone@example.com" method="post" enctype="text/plain">
-						<input type="text" class="col-md-6 col-xs-12 name" name='name' placeholder='Name *'/>
-						<input type="text" class="col-md-6 col-xs-12 Email" name='Email' placeholder='Email *'/>
-						<input type="text" class="col-md-12 col-xs-12 Subject" name='Subject' placeholder='Subject'/>
-						<textarea type="text" class="col-md-12 col-xs-12 Message" name='Message' placeholder='Message *'></textarea>
+						<input type="text" id="name" class="col-md-6 col-xs-12 name" name='name' placeholder='Name *'/>
+						<input type="text" id="email" class="col-md-6 col-xs-12 Email" name='Email' placeholder='Email *'/>
+						<input type="text" id="subject" class="col-md-12 col-xs-12 Subject" name='Subject' placeholder='Subject'/>
+						<textarea id="message" type="text" class="col-md-12 col-xs-12 Message" name='Message' placeholder='Message *'></textarea>
 						<div class="cBtn col-xs-12">
 							<ul>
-								<li class="clear"><a href="#"><i class="fa fa-times"></i>clear form</a></li>
-								<li class="send"><a href="#"><i class="fa fa-share"></i>Send Message</a></li>
+								<li class="clear"><a id="clearfrm" href="#"><i class="fa fa-times"></i>clear form</a></li>
+								<li class="send"><a id ="confirm"  href="#"><i class="fa fa-share"></i>Confirm</a></li>
+								<span id="cntl"><li class="send"><a id ="sendmsg"  href="#"><i class="fa fa-share"></i>Send Message</a></li></span>
 							</ul>
 						</div>
 					</form>
+				</div> -->
+				<div class="col-md-9 col-xs-12 forma">				
+						<div class="cBtn col-xs-12">
+							<ul>
+								<span id="cntl"><li class="send"><a id ="sendmsg"  href="mailto:redefineitsolutions@gmail.com?cc=codecubee@gmail.com&subject=CodeCube AI"><i class="fa fa-share"></i>Let's Connect</a></li></span>
+							</ul>
+						</div>
 				</div>
 				<div class="col-md-3 col-xs-12 cont">
 					<ul>
@@ -753,7 +762,7 @@
 						<input  id="searchPattern" type="search" placeholder="Search the Site"/><i class="glyphicon glyphicon-search" style="font-size: 13px; color:#a5a5a5;" id="iS"></i>
 					</div>
 					<div class="col-md-6 text-left copy">
-						<p>Copyright &copy; Redefine IT solutions. All Rights Reserved.</p>
+						<p>Copyright &copy; Redefine IT Solutions. All Rights Reserved.</p>
 					</div>
 					<!-- <div class="col-md-6 text-right dm">
 						<ul id="downMenu">
@@ -839,9 +848,8 @@
 	
 	<script type="text/javascript">
     $(document).ready(function(){
-       
         var $menu = $("#menuF");
-            
+        
         $(window).scroll(function(){
             if ( $(this).scrollTop() > 100 && $menu.hasClass("default") ){
                 $menu.fadeOut('fast',function(){
@@ -857,10 +865,25 @@
                 });
             }
         });
+		/* document.getElementById("confirm").onclick = function() {
+		 var name = document.getElementById("name").value;
+		 var email = document.getElementById("email").value;
+		 var subject = document.getElementById("subject").value;
+		 var message = document.getElementById("message").value;
+		 if(email.length > 5 && message.length > 2){
+			document.getElementById("cntl").style.display = "block"; 
+			document.getElementById("sendmsg").href="mailto:"+email+"?subject="+subject+"&body="+message+". Thanks"+name+"";
+		 } 
+         
+		 alert("validation completed")
+         return false;
+        };
+		*/
 	});
     //jQuery
 	</script>
 	<script>
+		
 		/*menu*/
 		function calculateScroll() {
 			var contentTop      =   [];
